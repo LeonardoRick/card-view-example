@@ -9,6 +9,7 @@ import com.example.card_view_example.model.Post;
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +27,13 @@ public class MainActivity extends AppCompatActivity {
         mainView = findViewById(R.id.recyclerView);
         createPostList();
         // layout config
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
+        // Change to this if you want a HORIZONTAL orientation like a carousel
+        // layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        // Change to this layout manager if you want a grid layout display
+        // RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         mainView.setLayoutManager( layoutManager );
 
         // adapter config
